@@ -1,0 +1,38 @@
+
+// maxWidth
+$max-width: 980px;
+
+
+//Element用のミックスイン  親要素のクラス名を継承してデリミターとして"__"を付与
+@mixin e($name) {
+  @at-root   &__#{$name} {
+	@content;
+  }
+}
+
+//Modifier用のミックスイン  親要素のクラス名を継承してデリミターとして"--"を付与
+@mixin m($name) {
+  @at-root   &--#{$name} {
+	@content;
+  }
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// clear fix mixin
+@mixin clearfix {
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
+}

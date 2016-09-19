@@ -1,0 +1,17 @@
+// Width
+$width-pc: 641px;
+$width-sp: 640px;
+
+@mixin mq-pc {
+	// PC: 641px
+	@media only screen and (min-width: $width-pc) {
+		@content;
+	}
+}
+
+@mixin mq-sp {
+	// タブレット・スマートフォン表示: 640px
+	@media only screen and (max-width: $width-sp) {
+		@content;
+	}
+}
